@@ -7,7 +7,7 @@ Future<void> main() async {
 
   await windowManager.ensureInitialized();
   WindowOptions windowOptions = const WindowOptions(
-    size: Size(350, 150),
+    size: Size(350, 130),
     backgroundColor: Colors.transparent,
     skipTaskbar: false,
     titleBarStyle: TitleBarStyle.hidden,
@@ -38,6 +38,7 @@ class _MainAppState extends State<MainApp> {
   void initState() {
     super.initState();
     // This updates the logic/UI state every second
+
     _timer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
       setState(() {});
     });
@@ -51,6 +52,9 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: ThemeData(canvasColor: Colors.transparent));
+    return MaterialApp(
+      theme: ThemeData(canvasColor: Colors.transparent),
+      home: Container(color: const Color.fromARGB(5, 0, 0, 0)),
+    );
   }
 }
